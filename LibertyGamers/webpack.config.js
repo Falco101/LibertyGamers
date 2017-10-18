@@ -29,9 +29,12 @@ module.exports = (env) => {
     const clientBundleConfig = merge(sharedConfig(), {
         entry: { 'main-client': './ClientApp/boot-client.tsx' },
         module: {
-            rules: [
-                { test: /\.css$/, use: ExtractTextPlugin.extract({ use: isDevBuild ? 'css-loader' : 'css-loader?minimize' }) }
-            ]
+            rules: [{
+                test: /\.(css|scss)$/,
+                use: ExtractTextPlugin.extract({
+                    use: isDevBuild ? ['css-loader', 'sass-loader'] : ['css-loader?minimize', 'sass-loader']
+                })
+            }]
         },
         output: { path: path.join(__dirname, clientBundleOutputDir) },
         plugins: [

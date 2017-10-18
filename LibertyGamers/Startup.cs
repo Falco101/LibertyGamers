@@ -34,6 +34,10 @@ namespace LibertyGamers
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
                     HotModuleReplacement = true,
+                    HotModuleReplacementClientOptions = new Dictionary<string, string>
+                    {
+                        {"reload", "true" },
+                    },
                     ReactHotModuleReplacement = true
                 });
             }
