@@ -37,23 +37,31 @@ $jumbotron-img: url('../images/Jumbotron.png');
             align-items: center;
             height: 100%;
             transform: skewX(-15deg);
-             :hover {
-                height: 100%;
-                min-width: 120px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                background-image: linear-gradient(rgba(100%, 96.5%, 83.5%, .5), rgba(100%, 96.5%, 83.5%, 0.1) 50%, transparent 50%), linear-gradient( #ffb900, #ad7d00);
-                -webkit-transition: background-image 0.2s ease-in-out;
-                transition: background-image .3s ease-in-out;
+            &.active {
                 a {
                     font-weight: bold;
+                    height: 100%;
+                    min-width: 120px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    background-image: linear-gradient(rgba(100%, 96.5%, 83.5%, .5), rgba(100%, 96.5%, 83.5%, 0.1) 50%, transparent 50%), linear-gradient( #ffb900, #ad7d00);
+                    -webkit-transition: background-image 0.2s ease-in-out;
+                    transition: background-image .3s ease-in-out;
+                    color: white;
+                    &:hover {
+                        color: white;
+                    }
                 }
             }
             a {
                 color: white;
+                &:hover {
+                    color: white;
+                    font-weight: bold;
+                }
             }
         }
     }
