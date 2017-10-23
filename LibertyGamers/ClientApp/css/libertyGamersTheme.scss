@@ -1,6 +1,7 @@
 @import 'fonts/yukarimobile_regular_macroman/stylesheet.css';
 $page-background: #4d4d4d;
-$nav-background: linear-gradient(rgba(20%, 20%, 20%, 0.75), rgba(10.2%, 10.2%, 10.2%, 0.75));
+$nav-background: linear-gradient(rgba(20%, 20%, 20%, 0.75), rgba(10.2%, 10.2%, 10.2%, 0.75)),
+url('../images/noise-tile.png');
 $jumbotron-img: url('../images/Jumbotron.png');
 //
 .lg-page {
@@ -11,93 +12,95 @@ $jumbotron-img: url('../images/Jumbotron.png');
     background-color: $page-background;
 }
 
+.lg-body {}
+
 .lg-navbar {
-    .navbar {
+    nav {
         background: $nav-background;
         height: 80px;
         margin: 0;
         border: 0;
+        padding: 0 20px 0 20px;
         border-bottom: 1px solid #d39900;
         border-radius: 0;
         box-shadow: 0 3px 5px rgba(0, 0, 0, .65);
-    }
-    .container {
         display: flex;
         flex-direction: row;
         height: 100%;
         align-items: center;
-    }
-    .navbar-nav {
-        height: 100%;
-        li {
-            min-width: 120px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .lg-title {
+            font-family: 'yukarimobileregular', Arial, sans-serif;
+            font-size: 18pt;
+            color: white;
+            transition: all .2s ease-in-out;
+            &:hover {
+                color: white;
+                text-shadow: 0px 0px 10px rgba(255, 183, 0, 1);
+                text-decoration: none;
+            }
+        }
+        .navbar-nav {
             height: 100%;
-            transform: skewX(-15deg);
-            &.active {
+            padding: 0 20px 0 20px;
+            li {
+                min-width: 120px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                transform: skewX(-15deg);
                 a {
-                    background: none;
-                    border: 0;
-                    outline: 0;
-                    &:hover,
-                    &:focus,
-                    &:active {
+                    position: relative;
+                    text-align: center;
+                    line-height: 3.5;
+                    z-index: 0;
+                    color: rgba(255, 255, 255, .75);
+                    font-weight: bold;
+                    height: 100%;
+                    min-width: 120px;
+                    width: 100%;
+                    &:focus {
+                        background: none;
+                    }
+                    &:after {
+                        content: '';
+                        background: linear-gradient(rgba(100%, 96.5%, 83.5%, .5), rgba(100%, 96.5%, 83.5%, 0.1) 50%, transparent 50%), linear-gradient( #ffb900, #ad7d00);
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        z-index: -1;
+                        opacity: 0;
+                        transition: opacity .3s ease-in;
+                    }
+                    &:hover {
+                        color: white;
+                        box-shadow: inset 0px 80px rgba(255, 185, 0, 0.2);
+                        background: none;
+                    }
+                    &.active {
+                        color: white;
                         background: none;
                         border: 0;
                         outline: 0;
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            background: none;
+                            border: 0;
+                            outline: 0;
+                        }
+                        &:after {
+                            opacity: 1;
+                        }
                     }
-                    &:after {
-                        opacity: 1;
-                    }
-                }
-            }
-            a {
-                position: relative;
-                text-align: center;
-                line-height: 3.5;
-                z-index: 0;
-                color: rgba(255, 255, 255, .75);
-                font-weight: bold;
-                height: 100%;
-                min-width: 120px;
-                width: 100%;
-                &:focus {
-                    background: none;
-                }
-                &:after {
-                    content: '';
-                    background: linear-gradient(rgba(100%, 96.5%, 83.5%, .5), rgba(100%, 96.5%, 83.5%, 0.1) 50%, transparent 50%), linear-gradient( #ffb900, #ad7d00);
-                    height: 100%;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    z-index: -1;
-                    opacity: 0;
-                    transition: opacity .5s ease-in-out;
-                }
-                &:hover {
-                    color: white;
-                    box-shadow: inset 0px 80px rgba(255, 185, 0, 0.2);
-                    transition: box-shadow .2s ease-in;
                 }
             }
         }
     }
-    .navbar-brand {
-        font-family: 'yukarimobileregular', Arial, sans-serif;
-        font-size: 18pt;
-        color: white;
-        transition: all .3s ease-in-out;
-        &:hover {
-            color: white;
-            text-shadow: 0px 0px 10px rgba(255, 183, 0, 0.75);
-        }
-    }
-    z-index: 1;
+    z-index: 10;
 }
 
 .lg-jumbotron {
@@ -105,10 +108,38 @@ $jumbotron-img: url('../images/Jumbotron.png');
     height: 600px;
     position: relative;
     top: -80px;
-    background-image: $jumbotron-img;
-    background-repeat: repeat-x;
-    background-size: auto, 400px;
-    z-index: 0;
+    .lg-jumbotron-content {
+        position: relative;
+        top: 80px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    .lg-jumbotron-bg {
+        position: absolute;
+        top: -80px;
+        left: 0px;
+        // filter: blur(1px);
+        width: 100%;
+        height: 600px;
+        background-image: $jumbotron-img;
+        background-repeat: repeat-x;
+        background-size: 2401px 600px;
+        z-index: -1;
+        animation: jumbotronScroll 60s linear infinite;
+    }
+}
+
+@keyframes jumbotronScroll {
+    from {
+        background-position-x: 0px;
+    }
+    to {
+        background-position-x: 2401px;
+    }
 }
 
 .lg-body {

@@ -18,6 +18,7 @@ module.exports = (env) => {
         module: {
             rules: [
                 { test: /\.tsx?$/, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' },
+                { test: /\.ttf?$/, include: path.resolve(__dirname, "node_modules/react-native-vector-icons"), use: 'url-loader' },
                 { test: /\.(png|jpg|jpeg|gif|svg|ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/, use: 'url-loader?limit=100000000' }
             ]
         },

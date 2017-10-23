@@ -1,4 +1,26 @@
 import './css/site.scss';
+// Use prebuilt version of RNVI in dist folder
+const Icon = require('react-native-vector-icons/dist/FontAwesome');
+
+// Generate required css
+const iconFont = require('react-native-vector-icons/Fonts/FontAwesome.ttf');
+const iconFontStyles = `@font-face {
+  src: url(${iconFont});
+  font-family: FontAwesome;
+}`;
+
+// Create stylesheet
+const style = document.createElement('style');
+style.type = 'text/css';
+if (style.styleSheet) {
+  style.styleSheet.cssText = iconFontStyles;
+} else {
+  style.appendChild(document.createTextNode(iconFontStyles));
+}
+
+// Inject stylesheet
+document.head.appendChild(style);
+
 import 'bootstrap';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';

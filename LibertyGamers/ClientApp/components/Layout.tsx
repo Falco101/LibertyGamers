@@ -1,12 +1,12 @@
 import * as React from 'react';
+import { Jumbotron } from './Jumbotron';
 import { NavMenu } from './NavMenu';
-
 
 export class Layout extends React.Component<{}, {}> {
     public render() {
         return <div className="lg-page">            
                 <NavMenu />
-                <div className="lg-jumbotron">Hello</div>
+                <Jumbotron></Jumbotron>
                 <div className='lg-body'>
                     { this.props.children }
                 </div>
