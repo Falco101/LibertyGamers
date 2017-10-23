@@ -39,38 +39,62 @@ $jumbotron-img: url('../images/Jumbotron.png');
             transform: skewX(-15deg);
             &.active {
                 a {
-                    font-weight: bold;
-                    height: 100%;
-                    min-width: 120px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    background-image: linear-gradient(rgba(100%, 96.5%, 83.5%, .5), rgba(100%, 96.5%, 83.5%, 0.1) 50%, transparent 50%), linear-gradient( #ffb900, #ad7d00);
-                    -webkit-transition: background-image 0.2s ease-in-out;
-                    transition: background-image .3s ease-in-out;
-                    color: white;
-                    &:hover {
-                        color: white;
+                    background: none;
+                    border: 0;
+                    outline: 0;
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background: none;
+                        border: 0;
+                        outline: 0;
+                    }
+                    &:after {
+                        opacity: 1;
                     }
                 }
             }
             a {
-                color: white;
+                position: relative;
+                text-align: center;
+                line-height: 3.5;
+                z-index: 0;
+                color: rgba(255, 255, 255, .75);
+                font-weight: bold;
+                height: 100%;
+                min-width: 120px;
+                width: 100%;
+                &:focus {
+                    background: none;
+                }
+                &:after {
+                    content: '';
+                    background: linear-gradient(rgba(100%, 96.5%, 83.5%, .5), rgba(100%, 96.5%, 83.5%, 0.1) 50%, transparent 50%), linear-gradient( #ffb900, #ad7d00);
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    z-index: -1;
+                    opacity: 0;
+                    transition: opacity .5s ease-in-out;
+                }
                 &:hover {
                     color: white;
-                    font-weight: bold;
+                    box-shadow: inset 0px 80px rgba(255, 185, 0, 0.2);
+                    transition: box-shadow .2s ease-in;
                 }
             }
         }
     }
-    .lg-title {
+    .navbar-brand {
         font-family: 'yukarimobileregular', Arial, sans-serif;
         font-size: 18pt;
         color: white;
-        a:hover {
+        transition: all .3s ease-in-out;
+        &:hover {
             color: white;
+            text-shadow: 0px 0px 10px rgba(255, 183, 0, 0.75);
         }
     }
     z-index: 1;

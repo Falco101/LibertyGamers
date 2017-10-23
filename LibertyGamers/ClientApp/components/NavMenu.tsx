@@ -14,10 +14,6 @@ interface NavState {
     key: number
 }
 
-function handleSelected(key: number) {
-    
-}
-
 export class NavMenu extends React.Component<NavProps, NavState> {
     public constructor(props: NavProps) {
         super(props);
@@ -34,7 +30,9 @@ export class NavMenu extends React.Component<NavProps, NavState> {
                             <a href="/" className="lg-title">Liberty Gamers</a>
                         </Navbar.Brand>
                     </Navbar.Header>
-                    <Nav activeKey={ this.state.key } onSelect={this.setState}>
+                    <Nav activeKey={ this.state.key } onSelect={ (selectedKey: any) => {
+                        this.setState({key: selectedKey});
+                    } }> 
                         <NavItem eventKey={1} href={ '/' }>News</NavItem>
                         <NavItem eventKey={2} href={ '/counter' }>Counter</NavItem>
                     </Nav>
