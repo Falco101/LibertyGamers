@@ -1,18 +1,25 @@
 @import 'fonts/yukarimobile_regular_macroman/stylesheet.css';
+$mdi-font-path: '~mdi/fonts/';
+@import '~mdi/scss/materialdesignicons';
 $page-background: #4d4d4d;
-$nav-background: linear-gradient(rgba(20%, 20%, 20%, 0.75), rgba(10.2%, 10.2%, 10.2%, 0.75)),
+$nav-background: linear-gradient(rgba(20%, 20%, 20%, 0.8), rgba(10.2%, 10.2%, 10.2%, 0.8)),
 url('../images/noise-tile.png');
 $jumbotron-img: url('../images/Jumbotron.png');
+@mixin CarbonFibre {
+    background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
+    background-color: #282828;
+    background-size: 16px 16px;
+}
+
+$SideBarWidth: '400px';
 //
 .lg-page {
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: flex-start;
     align-content: center;
-    background-color: $page-background;
+    background-color: #282828;
 }
-
-.lg-body {}
 
 .lg-navbar {
     nav {
@@ -27,7 +34,9 @@ $jumbotron-img: url('../images/Jumbotron.png');
         display: flex;
         flex-direction: row;
         height: 100%;
+        width: 100%;
         align-items: center;
+        justify-content: space-between;
         .lg-title {
             font-family: 'yukarimobileregular', Arial, sans-serif;
             font-size: 18pt;
@@ -99,6 +108,25 @@ $jumbotron-img: url('../images/Jumbotron.png');
                 }
             }
         }
+        .lg-social-icons {
+            list-style: none;
+            justify-self: flex-end;
+            li {
+                float: left;
+                a {
+                    background: none;
+                    display: block;
+                    padding: 4px;
+                    color: rgba(255, 255, 255, .75);
+                    text-decoration: none;
+                    transition: all .3s ease-in-out;
+                    &:hover {
+                        color: white;
+                        text-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+                    }
+                }
+            }
+        }
     }
     z-index: 10;
 }
@@ -107,11 +135,28 @@ $jumbotron-img: url('../images/Jumbotron.png');
     width: 100%;
     height: 600px;
     position: relative;
-    top: -80px;
+    margin: 0;
+    z-index: 0;
+    .lg-jumbotron-pause {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+        outline: 0;
+        border: 0;
+        color: rgba(255, 255, 255, .5);
+        background-color: rgba(0, 0, 0, .5);
+        transition: all .3s ease-in-out;
+        &:hover {
+            color: white;
+            background-color: rgba(0, 0, 0, .85);
+        }
+    }
     .lg-jumbotron-content {
         position: relative;
         top: 80px;
         padding: 20px;
+        width: calc(100% - 40px);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -128,7 +173,7 @@ $jumbotron-img: url('../images/Jumbotron.png');
         background-image: $jumbotron-img;
         background-repeat: repeat-x;
         background-size: 2401px 600px;
-        z-index: -1;
+        z-index: 0;
         animation: jumbotronScroll 60s linear infinite;
     }
 }
@@ -144,8 +189,23 @@ $jumbotron-img: url('../images/Jumbotron.png');
 
 .lg-body {
     display: flex;
+    width: calc(100% - 400px);
+    // @include CarbonFibre;
+    position: relative;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    padding: 20px;
+    border-top: 1px solid gray;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .5);
 }
 
-.testing {
-    padding: 20px;
+.lg-newsfeed {
+    color: white;
+}
+
+.lg-sidebar {
+    width: $SideBarWidth;
 }
