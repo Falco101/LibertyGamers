@@ -47,12 +47,12 @@ export class NavMenu extends React.Component<NavProps, NavState> {
                            </a> 
                         </li>
                         <li>
-                           <a href="www.facebook.com">
+                            <a href="https://www.facebook.com/LibTarianGamers/">
                                 <i className="mdi mdi-facebook-box" aria-hidden="true"></i>
                            </a> 
                         </li>
                         <li>
-                           <a href="www.youtube.com">
+                            <a href="https://www.youtube.com/channel/UC99rhLnUNbChsy-Skt0K-5Q">
                                 <i className="mdi mdi-youtube-play" aria-hidden="true"></i>
                            </a> 
                         </li>
@@ -62,11 +62,3 @@ export class NavMenu extends React.Component<NavProps, NavState> {
         );
     }
 }
-
-
-// activeKey={ this.state.key } onSelect={(currentKey: any) => {
-//     this.setState({key: currentKey});
-// }}
-
-
-
