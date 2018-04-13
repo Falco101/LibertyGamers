@@ -11,6 +11,20 @@ $jumbotron-img: url('../images/Jumbotron.png');
     background-size: 16px 16px;
 }
 
+@mixin ContentBox {
+    display: flex;
+    // @include CarbonFibre;
+    position: relative;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    padding: 20px;
+    border-top: 1px solid gray;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .5);
+}
+
 $SideBarWidth: '400px';
 //
 .lg-page {
@@ -187,25 +201,23 @@ $SideBarWidth: '400px';
     }
 }
 
-.lg-body {
+.lg-content {
     display: flex;
-    width: calc(100% - 400px);
-    // @include CarbonFibre;
-    position: relative;
-    margin: 0;
-    border: 0;
-    outline: 0;
-    padding: 20px;
-    border-top: 1px solid gray;
-    margin: 20px;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, .5);
-}
-
-.lg-newsfeed {
-    color: white;
-}
-
-.lg-sidebar {
-    width: $SideBarWidth;
+    flex-direction: row;
+    justify-content: flex-start;
+    .lg-body {
+        width: calc(100% - 400px);
+        @include ContentBox();
+    }
+    .lg-newsfeed {
+        color: white;
+    }
+    .lg-sidebar {
+        width: $SideBarWidth;
+        @include ContentBox();
+        margin-left: 0;
+        .lg-worldClock {
+            color: white;
+        }
+    }
 }

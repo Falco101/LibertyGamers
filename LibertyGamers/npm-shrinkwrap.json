@@ -9,6 +9,27 @@
       "resolved": "https://registry.npmjs.org/@types/history/-/history-4.6.0.tgz",
       "integrity": "sha1-CT1n7XgNiJyVQ/bcok6+4La5/EU="
     },
+    "@types/jstimezonedetect": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/@types/jstimezonedetect/-/jstimezonedetect-1.0.1.tgz",
+      "integrity": "sha512-avQpzE9QdZBzxmkpLsTeuWPaYZJDywmC23ceo7PFq4HaPSixyzA4lxYcK8NVl1p+tFAY7CZ5cFXkpxj/pzLPpQ=="
+    },
+    "@types/moment": {
+      "version": "2.13.0",
+      "resolved": "https://registry.npmjs.org/@types/moment/-/moment-2.13.0.tgz",
+      "integrity": "sha1-YE69GJvDvDShVIaJQE5hoqSqyJY=",
+      "requires": {
+        "moment": "2.19.1"
+      }
+    },
+    "@types/moment-timezone": {
+      "version": "0.5.1",
+      "resolved": "https://registry.npmjs.org/@types/moment-timezone/-/moment-timezone-0.5.1.tgz",
+      "integrity": "sha512-gid9An/Ovp4l+5MOsyiGU6jpaXJZH1gkA9ubmIF8z1mWjtqEJMj0c4OA1cgTVGKo9QHuM8wG9XkTOZ7uEYUNcg==",
+      "requires": {
+        "moment": "2.19.1"
+      }
+    },
     "@types/node": {
       "version": "8.0.7",
       "resolved": "https://registry.npmjs.org/@types/node/-/node-8.0.7.tgz",
@@ -3230,6 +3251,11 @@
         "verror": "1.10.0"
       }
     },
+    "jstimezonedetect": {
+      "version": "1.0.6",
+      "resolved": "https://registry.npmjs.org/jstimezonedetect/-/jstimezonedetect-1.0.6.tgz",
+      "integrity": "sha1-YNMfus2/V69xsGSIfuBA8Vla21I="
+    },
     "keycode": {
       "version": "2.1.9",
       "resolved": "https://registry.npmjs.org/keycode/-/keycode-2.1.9.tgz",
@@ -3798,6 +3824,19 @@
       "integrity": "sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=",
       "requires": {
         "minimist": "0.0.8"
+      }
+    },
+    "moment": {
+      "version": "2.19.1",
+      "resolved": "https://registry.npmjs.org/moment/-/moment-2.19.1.tgz",
+      "integrity": "sha1-VtoaLRy/AdOLfhr8McELz6GSkWc="
+    },
+    "moment-timezone": {
+      "version": "0.5.13",
+      "resolved": "https://registry.npmjs.org/moment-timezone/-/moment-timezone-0.5.13.tgz",
+      "integrity": "sha1-mc5cfYJyYusPH3AgRBd/YHRde5A=",
+      "requires": {
+        "moment": "2.19.1"
       }
     },
     "ms": {
@@ -6194,14 +6233,6 @@
       "resolved": "https://registry.npmjs.org/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz",
       "integrity": "sha1-J5siXfHVgrH1TmWt3UNS4Y+qBxM="
     },
-    "string_decoder": {
-      "version": "1.0.3",
-      "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.0.3.tgz",
-      "integrity": "sha1-D8Z9fBQYJd6UKC3VNr7GubzoYKs=",
-      "requires": {
-        "safe-buffer": "5.1.1"
-      }
-    },
     "string-width": {
       "version": "1.0.2",
       "resolved": "https://registry.npmjs.org/string-width/-/string-width-1.0.2.tgz",
@@ -6211,6 +6242,14 @@
         "code-point-at": "1.1.0",
         "is-fullwidth-code-point": "1.0.0",
         "strip-ansi": "3.0.1"
+      }
+    },
+    "string_decoder": {
+      "version": "1.0.3",
+      "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.0.3.tgz",
+      "integrity": "sha1-D8Z9fBQYJd6UKC3VNr7GubzoYKs=",
+      "requires": {
+        "safe-buffer": "5.1.1"
       }
     },
     "stringstream": {
